@@ -54,7 +54,7 @@ class Credential:
             Password details of person that matches the number.
         '''
 
-        for contact in cls.contact_list:
-            if contact.phone_number == number:
-                return contact
+        for credential in cls.credential_list:
+            if credential.phone_number == number:
+                return credential
    
