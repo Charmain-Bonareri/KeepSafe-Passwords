@@ -90,6 +90,17 @@ class CredentialTest(unittest.TestCase):
 
         self.assertEqual(found_password.email,test_credential.email)
 
+    def test_passwords_exist(self):
+        """
+            Test to check if we can return a true if we can find the contact
+            and false if we cannot find the contact.
+        """
+        self.new_credential.save_userInfo()
+        test_password = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!")  
+        test_password.save_userInfo()
+        found_password = Credential.passwords_exist("0712345678")
+        self.assertTrue(found_password)
+
     
 
 

@@ -1,4 +1,5 @@
 
+
 class User:
     """
    Class that generates new instances of users.
@@ -57,4 +58,18 @@ class Credential:
         for credential in cls.credential_list:
             if credential.phone_number == number:
                 return credential
+
+    @classmethod
+    def passwords_exist(cls, number):
+        """
+        A method that checks if a password exists from the credential list.
+        Args:
+            number: Phone number to search if it exists
+        Returns :
+            True or false depending if the contact exists
+        """
+        for credential in cls.credential_list:
+            if credential.phone_number == number :
+                return True
+        return False
    
