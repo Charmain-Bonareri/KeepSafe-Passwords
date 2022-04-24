@@ -37,4 +37,24 @@ class Credential:
         """
         Credential.credential_list.append(self)
 
+    def delete_passwords(self):
+        """
+        delete_password method deletes a saved password from the credential_list
+        """
+        Credential.credential_list.remove(self)
+
+    @classmethod
+    def find_by_number(cls,number):
+        '''
+        Method that takes in a number and returns password details that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            Password details of person that matches the number.
+        '''
+
+        for contact in cls.contact_list:
+            if contact.phone_number == number:
+                return contact
    

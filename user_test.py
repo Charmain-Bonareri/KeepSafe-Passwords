@@ -57,15 +57,38 @@ class CredentialTest(unittest.TestCase):
             objects to our credential_list
         '''
         self.new_credential.save_userInfo()
-        test_credential = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!") 
+        test_credential = Credential("Test", "user", "0712345678", "test@user.com") 
         test_credential.save_userInfo()
         self.assertEqual(len(Credential.credential_list),2)
 
     def tearDown(self):
         '''
-        tearDown method that does clean up after each test case has run.
+            TearDown method that does clean up after each test case has run.
         '''
         Credential.credential_list = []
+
+    def test_delete_passwords(self):
+        """
+            Test_delete_passwords to test if we can remove a password from our credential list
+        """
+        self.new_credential.save_userInfo()
+        test_credential = Credential("Test", "user", "0712345678", "test@user.com")
+        test_credential.save_userInfo()
+
+        self.new_credential.delete_passwords()
+        self.assertEqual(len(Credential.credential_list),1)
+
+    def test_find_passwords(self):
+        """
+            Test to check if we can find credential details by phone number and display information
+        """
+        self.new_credential.save_userInfo()
+        test_credential = Credential("Test", "user", "0712345678", "test@user.com") 
+        test_credential.save_userInfo()
+
+        found_password = Credential.find_by_number("0712345678")
+
+        self.assertEqual(found_password.email,test_credential.email)
 
     
 
