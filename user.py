@@ -87,4 +87,12 @@ class Credential:
         found_password = Credential.find_by_number(account)
         pyperclip.copy(found_password.password)
 
+class Password():
+    def __init__(self,ranPassword):
+         self.ranPassword=ranPassword
+    def generatePassword():
+        password="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)(*&^%$#@!)"
+        return password
+
+
    
