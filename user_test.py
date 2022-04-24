@@ -101,6 +101,13 @@ class CredentialTest(unittest.TestCase):
         found_password = Credential.passwords_exist("0712345678")
         self.assertTrue(found_password)
 
+    def test_display_all_passwords(self):
+        '''
+            A method that returns all password details that has been saved by the user
+        '''
+
+        self.assertEqual(Credential.display_passwords(),Credential.credential_list)
+
     
 
 

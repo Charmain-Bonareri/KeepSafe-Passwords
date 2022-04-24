@@ -72,4 +72,13 @@ class Credential:
             if credential.phone_number == number :
                 return True
         return False
+
+
+    @classmethod
+    def display_passwords(cls):
+        """
+        Method that returns all passwords in our list
+
+        """
+        return cls.credential_list
    
