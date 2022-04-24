@@ -1,4 +1,4 @@
-from user import User
+from user import User, Credential
 import unittest
 
 class UserTest(unittest.TestCase):
@@ -16,6 +16,40 @@ class UserTest(unittest.TestCase):
         self.assertEqual(self.new_user.username, "CharmainB")        
         self.assertEqual(self.new_user.email, "charmb@gmail.com")
         self.assertEqual(self.new_user.password, "Mogz123!")
+
+    def test_save_user(self):
+        """
+            Test_save_user test case to test if the user object is saved into
+            the user list
+
+        """
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
+
+class CredentialTest(unittest.TestCase):
+    def setUp(self):
+        """
+            Set up method to run before each test cases.
+        """       
+        self.new_credential = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!") # create userinfo object
+
+
+    def test_init(self):
+        """
+            Test_init test case to test if the object is initialized properly
+        """
+        self.assertEqual(self.new_credential.username, "CharmainB")        
+        self.assertEqual(self.new_credential.email, "charmb@gmail.com")   
+        self.assertEqual(self.new_credential.phone_number, "0712345678")    
+        self.assertEqual(self.new_credential.password, "Mogz123!")
+
+    def test_save_user(self):
+        """
+            Test_save_user test case to test if the user object is saved into
+            the user list
+        """
+        self.new_credential.save_userInfo()
+        self.assertEqual(len(Credential.credential_list),1)
 
 
 if __name__ == '__main__':
