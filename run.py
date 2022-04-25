@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.8
 from user import User, Credential
 import random
+from random import randint
 
 def create_user(username, email, password):
     """
@@ -57,7 +58,7 @@ def display_passwords():
 '''
 This a function to generate random password
 '''
-def random_password(limit):
+def get_random_password(limit):
     password="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)(*&^%$#@!)"
     ran=len(password)
     hold=''
@@ -65,3 +66,57 @@ def random_password(limit):
         all=password[random.randint(0,ran)]
         hold=hold+all
     return hold
+
+def main():  
+        print("Welcome to KeepSafePasswords, I hope your are having a fantastic day! What is your name?")
+        name=input()
+        print(f"Hey {name}, please enter your username")
+        username=input()
+        print(f"{name}, please enter your phone number")
+        phone_number = input()
+        print(f"{name}, please enter your email")
+        email = input()
+        print("Please choose between the following options: gp-generate password or mp- to make your own password ")
+        short_codes=input().lower()
+        if short_codes=="gp":
+            print("We recommend passwords of upto 8 characters, how many characters would you like?")
+            limit=int(input())
+            print('\n')
+            print("~~"*40)
+            password=get_random_password(limit)
+            print("Yaay! your details have been saved successfully!")
+            print("~~"*40)
+            print("Your username is " +username +" and your password is "+password)
+            print("~~"*40)
+        else:
+            print("Enter your password")
+            password=input()  
+            print("~~"*40)
+            print("Your username is " +username +" and your password is "+password)
+            print("~~"*40)      
+        save_userInfo(Credential(username,phone_number, email, password))
+        print("\n")
+        print(f"Welcome to your KeepSafe account {name}")
+        while True:
+                print("Please choose between the following options\n cp-  dc--  fp--   dp-- delete password ex-- exit ")
+                short_codes=input().lower()
+                if short_codes=="cp":
+                    print("-"*10)
+                    print("Time to create your new account details\n")
+                    print(f"{name} please enter the account name you are creating details for i.e., Snapchat, Twitter, Workday, Jumia")
+                    KeepSafeAccount=input();
+                    print("Enter your preferred username")
+                    username=input();
+                    print("Enter yourpassword")
+                    password=input()
+                    save_userInfo(Credential(username,phone_number, email, password))
+                    print("\n")
+                    print("~~"*40)
+                    print(f"KeepSafe has saved your {KeepSafeAccount} account details successfully")
+                    print("~~"*40)
+                    print("\n")
+
+
+
+if __name__ == '__main__':
+       main()
