@@ -34,3 +34,11 @@ $ User can make their own passwords and proceed to other options.
 $ The application allows user to create multiple accounts and save them.
 $ The application displays to the user their saved password details.
 ```
+## Technologies
+* Python3.8
+
+## Authors information
+Contributions are always welcome!  
+If you have any questions,comments or correctional advice, feel free to contact me
+* Email: mogerecharmain@gmail.com
+* [LinkedIn](https://www.linkedin.com/in/charmain-bonareri-71a209126/)
