@@ -26,7 +26,8 @@ class Credential:
 
     credential_list = []; #Empty credentials list
 
-    def __init__(self, username, email,phone_number, password):
+    def __init__(self, KeepSafeAccount, username, email,phone_number, password):
+        self.KeepSafeAccount = KeepSafeAccount
         self.username = username
         self.email = email   
         self.phone_number = phone_number         

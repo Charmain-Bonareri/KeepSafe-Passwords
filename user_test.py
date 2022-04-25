@@ -31,13 +31,14 @@ class CredentialTest(unittest.TestCase):
         """
             Set up method to run before each test cases.
         """       
-        self.new_credential = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!") # create userinfo object
+        self.new_credential = Credential("Snapchat", "CharmainB","charmb@gmail.com","0712345678", "Mogz123!") # create userinfo object
 
 
     def test_init(self):
         """
             Test_init test case to test if the object is initialized properly
         """
+        self.assertEqual(self.new_credential.KeepSafeAccount, "Snapchat")  
         self.assertEqual(self.new_credential.username, "CharmainB")        
         self.assertEqual(self.new_credential.email, "charmb@gmail.com")   
         self.assertEqual(self.new_credential.phone_number, "0712345678")    
@@ -57,7 +58,7 @@ class CredentialTest(unittest.TestCase):
             objects to our credential_list
         '''
         self.new_credential.save_userInfo()
-        test_credential = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!") 
+        test_credential = Credential("Snapchat", "CharmainB","charmb@gmail.com","0712345678", "Mogz123!") 
         test_credential.save_userInfo()
         self.assertEqual(len(Credential.credential_list),2)
 
@@ -72,7 +73,7 @@ class CredentialTest(unittest.TestCase):
             Test_delete_passwords to test if we can remove a password from our credential list
         """
         self.new_credential.save_userInfo()
-        test_credential = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!")
+        test_credential = Credential("Snapchat", "CharmainB","charmb@gmail.com","0712345678", "Mogz123!")
         test_credential.save_userInfo()
 
         self.new_credential.delete_passwords()
@@ -83,7 +84,7 @@ class CredentialTest(unittest.TestCase):
             Test to check if we can find credential details by phone number and display information
         """
         self.new_credential.save_userInfo()
-        test_credential = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!" ) 
+        test_credential = Credential("Snapchat", "CharmainB","charmb@gmail.com","0712345678", "Mogz123!") 
         test_credential.save_userInfo()
 
         found_password = Credential.find_by_number("0712345678")
@@ -96,7 +97,7 @@ class CredentialTest(unittest.TestCase):
             and false if we cannot find the contact.
         """
         self.new_credential.save_userInfo()
-        test_password = Credential("CharmainB","charmb@gmail.com","0712345678", "Mogz123!")  
+        test_password = Credential("Snapchat", "CharmainB","charmb@gmail.com","0712345678", "Mogz123!")
         test_password.save_userInfo()
         found_password = Credential.passwords_exist("0712345678")
         self.assertTrue(found_password)
