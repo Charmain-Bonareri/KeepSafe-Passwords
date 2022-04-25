@@ -99,16 +99,18 @@ def main():
         print("\n")
         print(f"Welcome to your KeepSafe account {name}")
         while True:
-                print("Please choose between the following options\n cp-  dc--  fp--   dp-- delete password ex-- exit ")
+                print("Please choose between the following options\n cp-- create new password details  dp-- display saved password details  fp-- find a specific details by number   dp-- delete password details ex-- exit KeepSafePasswords ")
                 short_codes=input().lower()
                 if short_codes=="cp":
                     print("-"*10)
                     print("Time to create your new account details\n")
                     print(f"{name} please enter the account name you are creating details for i.e., Snapchat, Twitter, Workday, Jumia")
                     KeepSafeAccount=input();
-                    print("Enter your preferred username")
+                    print("please enter your preferred username")
                     username=input();
-                    print("Enter yourpassword")
+                    print(f"{name}, please enter your phone number")
+                    phone_number = input()
+                    print("please enter your password")
                     password=input()
                     save_userInfo(Credential(username,phone_number, email, password))
                     print("\n")
