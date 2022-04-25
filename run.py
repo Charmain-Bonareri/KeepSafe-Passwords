@@ -1,7 +1,8 @@
 #!/usr/bin/env python3.8
 from user import User, Credential
 import random
-from random import randint
+import string
+
 
 def create_user(username, email, password):
     """
@@ -58,14 +59,15 @@ def display_passwords():
 '''
 This a function to generate random password
 '''
-def get_random_password(limit):
+def get_random_password():
     password="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)(*&^%$#@!)"
     ran=len(password)
-    hold=''
-    for i in range(0,limit):
+    randomPassword=''
+    for i in range(6):
         all=password[random.randint(0,ran)]
-        hold=hold+all
-    return hold
+        randomPassword=randomPassword+all
+    return randomPassword
+
 
 def main():  
         print("Welcome to KeepSafePasswords, I hope your are having a fantastic day! What is your name?")
@@ -78,18 +80,17 @@ def main():
         email = input()
         print("Please choose between the following options: gp-generate password or mp- to make your own password ")
         short_codes=input().lower()
-        if short_codes=="gp":
-            print("We recommend passwords of upto 8 characters, how many characters would you like?")
-            limit=int(input())
+        if short_codes=="gp":            
             print('\n')
             print("~~"*40)
-            password=get_random_password(limit)
+            password=get_random_password()
+           
             print("Yaay! your details have been saved successfully!")
             print("~~"*40)
             print("Your username is " +username +" and your password is "+password)
             print("~~"*40)
         else:
-            print("Enter your password")
+            print("Enter your password")           
             password=input()  
             print("~~"*40)
             print("Your username is " +username +" and your password is "+password)
