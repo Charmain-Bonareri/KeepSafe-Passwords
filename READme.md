@@ -14,7 +14,7 @@ KeepSafe Passwords is a python application that helps the user keep their passwo
 ## Description
 KeepSafe-Passwords is a python password-locker application, that helps users manage their passwords for the different accounts they have i.e., social accounts such as Snapchat, Twitter, LinkedIn or job portal accounts such as Workpay, Workday. It allows a user to create login credentials, save other account credentials, display their saved account details and delete account details. details.
 
-<img alt="app image" title="keepsafe_passwords" src="../assets/app.jpeg" width="800px" height="400">
+<img alt="app image" title="keepsafe_passwords" src="./assets/app.jpeg" width="950px" height="400">
 
 ## Setup and Installation Requirements
 To run this program:
