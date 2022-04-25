@@ -31,4 +31,6 @@ This application is documented and designed around the behavior a user expects t
 $ Users are given different options to register their details i,e., name, phone number and email.
 $ The application generates a password for the user upon request.
 $ User can make their own passwords and proceed to other options.
+$ The application allows user to create multiple accounts and save them.
+$ The application displays to the user their saved password details.
 ```
