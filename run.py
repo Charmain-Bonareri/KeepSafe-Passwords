@@ -128,7 +128,7 @@ def main():
                         print("--"*40)                       
                        
                         for details in display_passwords():
-                            print(f"Account Details:{KeepSafeAccount} \n User Name:{username}\n Phone number:{phone_number}\n  Email:{email}\n Password:{password}")
+                            print(f"Account Details:{KeepSafeAccount}\t User Name:{username}\t Phone number:{phone_number}\t Email:{email}\t Password:{password}")
                             print("\n")
                         print("--"*40)
                     else:
